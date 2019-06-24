@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/IoT_metamodel/src" modelPluginID="IoT_metamodel"
+    modelName="IoT_metamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ioT_metamodel.ecore</foreignModel>
+  <genPackages prefix="IoT_metamodel" disposableProviderFactory="true" ecorePackage="ioT_metamodel.ecore#/">
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Thing">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Thing/virtual_entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Thing/fog"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Thing/physical_entity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Thing/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Thing/contains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Thing/property"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//VirtualThing">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//VirtualThing/represents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//VirtualThing/URI"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//VirtualThing/is_associated_with"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//PhysicalThing">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//PhysicalThing/has"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Fog">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog/request_service"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog/fognode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog/request_cloud_service"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog/database"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog/define_control_policies_to"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//FogNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//FogNode/runs_on_vm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//FogNode/runs_in_container"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//FogNode/analytics_engine"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//FogNode/associates_with"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Device">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Device/is_attached_to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Device/contains"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Device/Technology"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Device/has_rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Device/devicestate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Device/has_communicators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Device/hosts"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Actuator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Actuator/acts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Actuator/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Actuator/observes"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Tag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Tag/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Tag/identifies"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ioT_metamodel.ecore#//Sensor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Sensor/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Sensor/State"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Sensor/frequency"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Sensor/monitors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Sensor/observes"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Rule/conditionLiteral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Rule/conditionValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Rule/involves"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//ExternalSensor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//ExternalSensor/sensor_actions"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//DeviceActuator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//DeviceActuator/actuator_actions"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//ExternalActuator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//ExternalActuator/actuator_actions"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Action/Description"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//DeviceState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DeviceState/Enabled"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//CompositeState"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Transition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Transition/action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Transition/incoming_states"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Transition/outgoing_states"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Digital_Artifact"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Active_Digital_Artifact"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Passive_Digital_Artifact"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//User">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//User/subscribes_invokes"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Human_User"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Communicator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Communicator/has_ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Communicator/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Communicator/ports_number"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Port"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//InformationResource">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//InformationResource/has_information_about"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//InformationResource/has"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//InformationResource/has_attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//On_Device_Resource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//On_Device_Resource/contains_device_resource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//On_Device_Resource/contains_service_resource"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Network_Resource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Network_Resource/contains_device_resource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Network_Resource/contains_service_resource"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Device_Resource"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Service_Resource"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Property/changeable"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//VM"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Container">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Container/ID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Container/IP_address"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Analytics_Engine"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Cloud">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Cloud/respond_to_fog"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Database">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Database/policy_repository"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Policy_Repository">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Policy_Repository/interacts_with"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Policy_Repository/contains"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Reference_Monitor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Reference_Monitor/orchestrate_policies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Reference_Monitor/enforces"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Authorizor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Authorizor/connects_with"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Information">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Information/atomicdata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Information/datastreams"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//DataStreams">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//DataStreams/consists_of"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//DataStreams/has_datastreamattributes"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//AtomicData">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//AtomicData/has_atomicdataattributes"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//DataStreamAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DataStreamAttributes/MeanBitRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DataStreamAttributes/Timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DataStreamAttributes/MaxBitrate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DataStreamAttributes/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DataStreamAttributes/DataFormat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DataStreamAttributes/DataEncoding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//DataStreamAttributes/DeviceID"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//AtomicDataAttributes">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//AtomicDataAttributes/DataEncoding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//AtomicDataAttributes/DeviceID"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Fog_Services">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog_Services/runs_in"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog_Services/invokes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog_Services/invokes_fog_services"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog_Services/exposes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Fog_Services/is_connected_with"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Operations">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Operations/points_to_processing_logic"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Operations/runs_in"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//Operations/subscribes_to"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ioT_metamodel.ecore#//Evaluators"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//JavaEvaluator"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//Entity"/>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//ScriptEvaluator"/>
+    <genClasses image="false" ecoreClass="ioT_metamodel.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ioT_metamodel.ecore#//Attribute/Type"/>
+    </genClasses>
+    <genClasses ecoreClass="ioT_metamodel.ecore#//DeviceSensor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ioT_metamodel.ecore#//DeviceSensor/sensor_actions"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

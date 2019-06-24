@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ADG_metamodel/src" modelPluginID="ADG_metamodel"
+    modelName="ADG_metamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>aDG_metamodel.ecore</foreignModel>
+  <genPackages prefix="ADG_metamodel" disposableProviderFactory="true" ecorePackage="aDG_metamodel.ecore#/">
+    <genClasses ecoreClass="aDG_metamodel.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aDG_metamodel.ecore#//Node/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aDG_metamodel.ecore#//Node/name"/>
+    </genClasses>
+    <genClasses ecoreClass="aDG_metamodel.ecore#//ActionNode"/>
+    <genClasses ecoreClass="aDG_metamodel.ecore#//SplitNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aDG_metamodel.ecore#//SplitNode/ID"/>
+    </genClasses>
+    <genClasses ecoreClass="aDG_metamodel.ecore#//JoinNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aDG_metamodel.ecore#//JoinNode/ID"/>
+    </genClasses>
+    <genClasses ecoreClass="aDG_metamodel.ecore#//ADG">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aDG_metamodel.ecore#//ADG/node"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference aDG_metamodel.ecore#//ADG/link"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aDG_metamodel.ecore#//ADG/ParallelStatus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute aDG_metamodel.ecore#//ADG/id"/>
+    </genClasses>
+    <genClasses ecoreClass="aDG_metamodel.ecore#//Link">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aDG_metamodel.ecore#//Link/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference aDG_metamodel.ecore#//Link/to"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

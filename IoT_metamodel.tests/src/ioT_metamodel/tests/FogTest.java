@@ -1,0 +1,89 @@
+/**
+ */
+package ioT_metamodel.tests;
+
+import ioT_metamodel.Fog;
+import ioT_metamodel.IoT_metamodelFactory;
+
+import junit.framework.TestCase;
+
+import junit.textui.TestRunner;
+
+/**
+ * <!-- begin-user-doc -->
+ * A test case for the model object '<em><b>Fog</b></em>'.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class FogTest extends TestCase {
+
+	/**
+	 * The fixture for this Fog test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Fog fixture = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static void main(String[] args) {
+		TestRunner.run(FogTest.class);
+	}
+
+	/**
+	 * Constructs a new Fog test case with the given name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FogTest(String name) {
+		super(name);
+	}
+
+	/**
+	 * Sets the fixture for this Fog test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Fog fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
+	 * Returns the fixture for this Fog test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Fog getFixture() {
+		return fixture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		setFixture(IoT_metamodelFactory.eINSTANCE.createFog());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		setFixture(null);
+	}
+
+} //FogTest

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="goal_metamodel" nsURI="http://www.example.org/goal_metamodel"
+    nsPrefix="goal_metamodel">
+  <eClassifiers xsi:type="ecore:EEnum" name="DecompositionType">
+    <eLiterals name="AND" literal="AND"/>
+    <eLiterals name="OR" value="1" literal="OR"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ContributionType">
+    <eLiterals name="PPS"/>
+    <eLiterals name="MMS" value="1"/>
+    <eLiterals name="PPD" value="2"/>
+    <eLiterals name="MMD" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//ContextualComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decomposition" eSuperTypes="#//ContextualComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DecompositionType"
+        defaultValueLiteral="AND"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decomposed_to" lowerBound="1"
+        upperBound="-1" eType="#//GoalNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyLink" eSuperTypes="#//Link"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalPrecedence" eSuperTypes="#//DependencyLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from_goalnode" lowerBound="1"
+        eType="#//GoalNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to_goalnode" lowerBound="1"
+        eType="#//GoalNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemporalLink" eSuperTypes="#//DependencyLink"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TemporalPrecedence" eSuperTypes="#//TemporalLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//GoalNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//GoalNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeoutLink" eSuperTypes="#//TemporalPrecedence">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TimeoutPeriod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from_action" lowerBound="1"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to_action" lowerBound="1"
+        eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeDifferenceLink" eSuperTypes="#//TemporalPrecedence">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TimeDifference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from_action" lowerBound="1"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to_action" lowerBound="1"
+        eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//ContextualComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="available" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Contribution" eSuperTypes="#//Link">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ContributionType"
+        defaultValueLiteral="PPS"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from_goalnode" lowerBound="1"
+        eType="#//GoalNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to_goalnode" lowerBound="1"
+        eType="#//GoalNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextualComponent" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has_contextcondition" upperBound="-1"
+        eType="#//ContextCondition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="context_enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal_Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextcondition" upperBound="-1"
+        eType="#//ContextCondition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" lowerBound="1" upperBound="-1"
+        eType="#//Link" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refers_to" lowerBound="1"
+        eType="#//Task"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceDependency" eSuperTypes="#//DependencyLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to_resource" lowerBound="1"
+        eType="#//Resource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from_action" lowerBound="1"
+        eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Available" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParallelNode" eSuperTypes="#//ControlNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NumberOfNodes" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Timeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParallelLink" eSuperTypes="#//DependencyLink">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//ParallelNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//GoalNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GoalNode" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="available" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlNode" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//GoalNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
+        eType="#//Resource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resource_enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StartTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EndTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//GoalNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasdecomposition" lowerBound="1"
+        eType="#//Decomposition" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

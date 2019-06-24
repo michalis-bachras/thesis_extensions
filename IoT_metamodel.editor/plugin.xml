@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ioT_metamodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ioT_metamodel.presentation.IoT_metamodelModelWizardID"
+            name="%_UI_IoT_metamodelModelWizard_label"
+            class="ioT_metamodel.presentation.IoT_metamodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/IoT_metamodelModelFile.gif">
+         <description>%_UI_IoT_metamodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ioT_metamodel -->
+      <editor
+            id="ioT_metamodel.presentation.IoT_metamodelEditorID"
+            name="%_UI_IoT_metamodelEditor_label"
+            icon="icons/full/obj16/IoT_metamodelModelFile.gif"
+            extensions="iot_metamodel"
+            class="ioT_metamodel.presentation.IoT_metamodelEditor"
+            contributorClass="ioT_metamodel.presentation.IoT_metamodelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

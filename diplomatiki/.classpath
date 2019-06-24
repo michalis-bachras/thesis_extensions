@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ADG_metamodel"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ADG_metamodel.edit"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ADG_metamodel.editor"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ADG_metamodel.tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/IoT_metamodel"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/IoT_metamodel.edit"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/IoT_metamodel.editor"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/IoT_metamodel.tests"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/goal_metamodel"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/goal_metamodel.edit"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/goal_metamodel.editor"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/goal_metamodel.tests"/>
+	<classpathentry kind="lib" path="/home/mik/Downloads/Untitled Folder 2/org.eclipse.emf.common-2.15.0.jar"/>
+	<classpathentry kind="lib" path="/home/mik/Downloads/Untitled Folder 2/ecore-2.3.0-v200706262000.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
